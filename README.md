@@ -4,5 +4,5 @@
   * Arquivo js [main.js](./main.js)
   > Repositorio no [Github](https://github.com/dragao2elastico/webdesign)
 
-  > Nome: Nicolas <div></div>
-  Senha: 1234
+  <!-- > Nome: Nicolas <div></div>
+  Senha: 1234 -->

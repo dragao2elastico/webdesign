@@ -1,28 +1,19 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+var hw =  "Hello World"
+var divs = [
+    "<img src=\"./img/capitaopatria.jpg\" style=\"width:100%\" onclick=\"imgExpand1()\">",
+    "<img src=\"./img/kratos.jpg\" style=\"width:100%\" onclick=\"imgExpand2()\">",
+    "<img src=\"./img/madara.jpg\" style=\"width:100%\" onclick=\"imgExpand3()\">"
+]
+var img1 = document.getElementById("cap")
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function imgExpand1() {
+    img1.document.write(hw)
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function imgExpand2() {
+    
 }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+function imgExpand3() {
+    
 }
