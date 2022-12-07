@@ -1,5 +1,9 @@
-body {
-    /* background: black url(./img/bg.webp); */
+* {margin: 0; padding: 0}
+body {background: #000;}
+canvas {display: block;}
+
+/* body {
+    /* background: black url(./img/bg.webp); /
     text-align: center;
     overflow: hidden;
     height: 100vh;
@@ -10,14 +14,10 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
+}*/
+/*
 h1{
     font-family: sans-serif;
     font-weight: 800;
     color: #5865f2;
-}
-
-*{margin:0;padding:0;}
-canvas{display:block;}
-body{background:black;}
+} */

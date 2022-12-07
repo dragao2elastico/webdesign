@@ -1,64 +1,62 @@
-var hw =  "Hello World"
-var divs = [
-    "<img src=\"./img/capitaopatria.jpg\" style=\"width:100%\" onclick=\"imgExpand1()\">",
-    "<img src=\"./img/kratos.jpg\" style=\"width:100%\" onclick=\"imgExpand2()\">",
-    "<img src=\"./img/madara.jpg\" style=\"width:100%\" onclick=\"imgExpand3()\">"
-]
-var img1 = document.getElementById("cap")
+// Initialising the canvas
+var canvas = document.querySelector('canvas'),
+    ctx = canvas.getContext('2d');
 
-function imgExpand1() {
-    img1.document.write(hw)
-}
+// Setting the width and height of the canvas
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-function imgExpand2() {
-    
-}
+// Setting up the letters
+var letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
+letters = letters.split('');
 
-function imgExpand3() {
-    
-}
+// Setting up the columns
+var fontSize = 10,
+    columns = canvas.width / fontSize;
 
-var c = document.getElementById('c');
-var cxt = c.getContext("2d");
-
-c.width = window.innerWidth;
-c.height = window.innerHeight;
-
-
-
-var chinese = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
-chinese = chinese.split("");
-
-var font_size =10;
-var columns = c.width/font_size; 
-
+// Setting up the drops
 var drops = [];
-
-for(var x=0;x<columns;x++){
-  drops[x]=1;
+for (var i = 0; i < columns; i++) {
+  drops[i] = 1;
 }
 
-function draw(){
-  cxt.fillStyle="rgba(0,0,0,0.05)";
-  cxt.fillRect(0,0,c.width,c.height);
-  
-  cxt.fillStyle = "#0F0";
-  cxt.font = font_size+'px arial';
-  
-  
-  for(var i=0;i<drops.length;i++){
-    var text = chinese[Math.floor(Math.random()*chinese.length)];
-    cxt.fillText(text,i*font_size,drops[i]*font_size);
-    
-    if(drops[i]*font_size>c.height && Math.random() >0.975)
-      drops[i]=0;
-    
-    //increment y coordinate
+// Setting up the draw function
+function draw() {
+  ctx.fillStyle = 'rgba(0, 0, 0, .1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  for (var i = 0; i < drops.length; i++) {
+    var text = letters[Math.floor(Math.random() * letters.length)];
+    ctx.fillStyle = '#0f0';
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
     drops[i]++;
+    if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
+      drops[i] = 0;
+    }
+  }
 }
-  
-}
-setInterval(draw,33);
+
+// Loop the animation
+setInterval(draw, 33);
+
+// var hw =  "Hello World"
+// var divs = [
+//     "<img src=\"./img/capitaopatria.jpg\" style=\"width:100%\" onclick=\"imgExpand1()\">",
+//     "<img src=\"./img/kratos.jpg\" style=\"width:100%\" onclick=\"imgExpand2()\">",
+//     "<img src=\"./img/madara.jpg\" style=\"width:100%\" onclick=\"imgExpand3()\">"
+// ]
+// var img1 = document.getElementById("cap")
+
+// function imgExpand1() {
+//     img1.document.write(hw)
+// }
+
+// function imgExpand2() {
+    
+// }
+
+// function imgExpand3() {
+    
+// }
 
 // document.onmousemove = (e) => {
 //     let body = document.querySelector('body');
