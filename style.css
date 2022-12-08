@@ -2,8 +2,40 @@
 body {background: #000;}
 canvas {display: block;}
 
-/* body {
-    /* background: black url(./img/bg.webp); /
+img#cap {
+    position: absolute;
+    display: block;
+    padding: 5px 10px; 
+    height: 25%;
+    width: 25%; 
+    left: 5px; 
+    top: 10vh;
+
+}
+
+img#kratos {
+    position: absolute;
+    display: block;
+    padding: 5px 10px; 
+    height: 25%;
+    width: 25%; 
+    top: 10vh;
+
+}
+
+img#madara {
+    position: absolute;
+    display: block;
+    padding: 5px 10px; 
+    height: 25%;
+    width: 25%; 
+    right: 5px; 
+    top: 10vh;
+
+}
+
+body {
+    position: absolute;
     text-align: center;
     overflow: hidden;
     height: 100vh;
@@ -14,7 +46,7 @@ canvas {display: block;}
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}*/
+}
 /*
 h1{
     font-family: sans-serif;

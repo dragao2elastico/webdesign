@@ -5,54 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style.css">
-        <style>
-            * {margin: 0; padding: 0}
-            body {background: #000;}
-            canvas {display: block;}
-        </style>
+        <link rel="stylesheet" href="./background/rainBg.css">
     </head>
     <body>
+        <canvas></canvas>
         <script src="./main.js"></script>
-        <script>
-            var canvas = document.querySelector('canvas'),
-            ctx = canvas.getContext('2d');
+        <script src="./background/rainBg.js"></script>
 
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            var letters = 'ABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZ';
-            letters = letters.split('');
-
-            var fontSize = 10,
-                columns = canvas.width / fontSize;
-
-            var drops = [];
-            for (var i = 0; i < columns; i++) {
-            drops[i] = 1;
-            }
-
-            function draw() {
-            ctx.fillStyle = 'rgba(0, 0, 0, .1)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            for (var i = 0; i < drops.length; i++) {
-                var text = letters[Math.floor(Math.random() * letters.length)];
-                ctx.fillStyle = '#0f0';
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                drops[i]++;
-                if (drops[i] * fontSize > canvas.height && Math.random() > .95) {
-                drops[i] = 0;
-                }
-            }
-            }
-
-            setInterval(draw, 33);
-        </script>
-
-        <!-- <img src="./img/capitaopatria.jpg" style="width:25%" onclick="imgExpand1()" id="cap">
-        <img src="./img/kratos.jpg" style="width:25%" onclick="imgExpand2()">
-        <img src="./img/madara.jpg" style="width:25%" onclick="imgExpand3()"> -->
-        <canvas>
-            
-        </canvas>
+        <img src="./img/capitaopatria.jpg" style="width:25%" onclick="imgExpand1()" id="cap">
+        <img src="./img/kratos.jpg" style="width:25%" onclick="imgExpand2()" id="kratos">
+        <img src="./img/madara.jpg" style="width:25%" onclick="imgExpand3()" id="madara">
+        
     </body>
 </html>
